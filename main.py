@@ -7,7 +7,7 @@ Item_Nor = json.load(open("item_Nor.json", "r"))
 Item_Weekly = json.load(open("item_Weekly.json", "r"))
 Csvlist = list(csv.reader(open('.Talents.csv', "r")))
 Needs = json.load(open("needs.json", "r"))
-Part = False
+Part = True
 
 
 def list_talents(name):
@@ -30,9 +30,9 @@ for key in Needs.keys():
 for name in Cha_name:
     Cha_Tal_1 = []
     Cha_Tal_1_s = Needs[name]["1技能初始"]
-    while Cha_Tal_1_s <= Needs[name]["1技能目标"]:
-        Cha_Tal_1.append(Cha_Tal_1_s)
+    while Cha_Tal_1_s < Needs[name]["1技能目标"]:
         Cha_Tal_1_s += 1
+        Cha_Tal_1.append(Cha_Tal_1_s)
     List_Talents_1 = []
     for lv in Cha_Tal_1:
         Csvlist[lv-1] = list(map(int, Csvlist[lv-1]))
@@ -53,9 +53,9 @@ for name in Cha_name:
 
     Cha_Tal_2 = []
     Cha_Tal_2_s = Needs[name]["2技能初始"]
-    while Cha_Tal_2_s <= Needs[name]["2技能目标"]:
-        Cha_Tal_2.append(Cha_Tal_2_s)
+    while Cha_Tal_2_s < Needs[name]["2技能目标"]:
         Cha_Tal_2_s += 1
+        Cha_Tal_2.append(Cha_Tal_2_s)
     List_Talents_2 = []
     for lv in Cha_Tal_2:
         Csvlist[lv-1] = list(map(int, Csvlist[lv-1]))
@@ -75,9 +75,9 @@ for name in Cha_name:
         t2 += 1
     Cha_Tal_3 = []
     Cha_Tal_3_s = Needs[name]["3技能初始"]
-    while Cha_Tal_3_s <= Needs[name]["3技能目标"]:
-        Cha_Tal_3.append(Cha_Tal_3_s)
+    while Cha_Tal_3_s < Needs[name]["3技能目标"]:
         Cha_Tal_3_s += 1
+        Cha_Tal_3.append(Cha_Tal_3_s)
     List_Talents_3 = []
     for lv in Cha_Tal_3:
         Csvlist[lv-1] = list(map(int, Csvlist[lv-1]))
